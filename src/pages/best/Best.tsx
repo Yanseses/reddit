@@ -38,7 +38,7 @@ export function Best(){
     return () => {
       if(bottomOfList.current) observer.unobserve(bottomOfList.current);
     }
-  }, [ dispatch, postCounter, token ]);
+  }, [ dispatch, postCounter ]);
 
   return (
     <CardList>

@@ -9,7 +9,6 @@
 @media all and (min-width: 1024px) {
   .heading {
     padding: 0;
-    margin: 0 24px 0 0;
     font-size: 28px;
     line-height: 33px;
   }

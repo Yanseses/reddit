@@ -9,6 +9,9 @@
 
 @media all and (min-width: 1540px){
   .header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 24px;
     padding: 67px 60px 60px 67px;
   }
 }

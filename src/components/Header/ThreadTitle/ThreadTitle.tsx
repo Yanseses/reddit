@@ -1,10 +1,10 @@
 import React from "react";
-import styles from './threadTitle.module.css';
+import { Text } from "../../Text/Text";
 
 export function ThreadTitle(){
   return (
-    <h1 className={styles.heading}>
+    <Text As='h1' size={28}>
       Best
-    </h1>
+    </Text>
   )
 }
