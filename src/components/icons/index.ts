@@ -7,3 +7,5 @@ export * from './HideIcon';
 export * from './CarmaIcon';
 export * from './AnonIcon';
 export * from './CrossIcon';
+export * from './SearchIcon';
+export * from './MessageIcon';

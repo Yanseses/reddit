@@ -9,7 +9,9 @@ import {
   HideIcon, 
   CarmaIcon, 
   AnonIcon, 
-  CrossIcon 
+  CrossIcon,
+  SearchIcon,
+  MessageIcon
 } from "../icons";
 
 export enum EIcons {
@@ -21,7 +23,9 @@ export enum EIcons {
   complain = 'ComplainIcon',
   carma = 'CarmaIcon',
   anon = 'AnonIcon',
-  cross = 'CrossIcon'
+  cross = 'CrossIcon',
+  search = 'SearchIcon',
+  message = 'MessageIcon'
 }
 
 interface IIconsProps {
@@ -66,5 +70,7 @@ function getIconComponent(name: EIcons){
     case EIcons.save: return <SaveIcon />
     case EIcons.complain: return <ComplainIcon />
     case EIcons.anon: return <AnonIcon />
+    case EIcons.search: return <SearchIcon />
+    case EIcons.message: return <MessageIcon />
   }
 }
