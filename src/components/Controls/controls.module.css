@@ -1,0 +1,43 @@
+.menuList {
+  padding: 0 20px;
+}
+
+.menuItem {
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(237, 237, 237);
+  display: flex;
+}
+
+.menuItem:hover {
+  cursor: pointer;
+}
+
+.menuItem:hover > span {
+  color: var(--orange);
+}
+
+.menuItem:hover > span > svg > path {
+  fill: var(--orange);
+}
+
+.menuItem:last-child {
+  border-bottom: none;
+}
+
+.controlsList {
+  display: flex;
+  column-gap: 15px;
+}
+
+.controlsItem {
+  display: flex;
+  cursor: pointer;
+}
+
+.controlsItem:hover > span {
+  color: var(--orange);
+}
+
+.controlsItem:hover > span > svg > path {
+  fill: var(--orange);
+}

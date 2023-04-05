@@ -1,0 +1,12 @@
+.cardList {
+  padding: 0;
+}
+
+@media all and (min-width: 1540px){
+  .cardList {
+    background-color: var(--white);
+    border-radius: 7px 7px 0 0;
+    padding: 40px 0;
+    height: inherit;
+  }
+}

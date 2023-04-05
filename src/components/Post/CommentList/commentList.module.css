@@ -1,0 +1,22 @@
+.commentList {
+  padding-left: 10px;
+  margin-left: 10px;
+  border-left: 1px solid var(--greyD9);
+  position: relative;
+  margin-top: 20px;
+}
+
+@media all and (min-width: 1024px) {
+  .commentList {
+    padding-left: 20px;
+    margin-left: 10px;
+    border-width: 2px;
+    margin-top: 40px;
+  }
+}
+
+@media all and (min-width: 1540px) {
+  .commentList {
+    border-width: 3px;
+  }
+}

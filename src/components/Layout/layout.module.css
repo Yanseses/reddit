@@ -1,0 +1,15 @@
+.layout {
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 7px;
+}
+
+@media all and (min-width: 1540px) {
+  .layout {
+    box-shadow: 0 0 80px rgba(0, 0, 0, .1);
+    height: 90vh;
+    overflow: hidden;
+    margin-top: 2.5%;
+    padding-bottom: 10%;
+  }
+}

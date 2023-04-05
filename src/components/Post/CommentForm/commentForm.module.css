@@ -1,0 +1,40 @@
+.commentForm {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  font-family: 'Roboto';
+  border-radius: 5px;
+  background-color: var(--greyD9);
+}
+
+.input {
+  width: 100%;
+  border: 1px solid var(--greyD9);
+  font-size: 16px;
+  line-height: 19px;
+  padding: 5px 10px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--grey99);
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+@media all and (min-width: 1024px) {
+  .commentForm {
+    margin-top: 20px;
+  }
+
+  .button {
+    padding: 17px 49px;
+  }
+
+  .input {
+    padding: 16px 18px;
+  }
+}

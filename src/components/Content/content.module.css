@@ -1,0 +1,9 @@
+@media all and (min-width: 1540px){
+  .content {
+    padding-right: 44px;
+    margin-right: 38px;
+    padding-left: 58px;
+    overflow-y: scroll;
+    height: 95%;
+  }
+}

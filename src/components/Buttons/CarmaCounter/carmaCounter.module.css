@@ -1,0 +1,54 @@
+.karmaCounter > * + * {
+  padding: 0 0 0 4px;
+}
+
+.karmaValue {
+  color: var(--greyC4);
+}
+
+svg.down {
+  transform: rotate(180deg);
+}
+
+.karmaCounter > button.up__active > span > svg > path {
+  fill: var(--green);
+}
+
+.karmaCounter > button.down__active > span > svg > path {
+  fill: var(--orange);
+}
+
+@media all and (min-width: 1024px){
+  .karmaCounter > button.up:hover > span > svg > path {
+    fill: var(--green);
+  }
+
+  .karmaCounter > button.down:hover > span > svg > path {
+    fill: var(--orange);
+  }
+
+  .up {
+    display: flex;
+  }
+
+  .down {
+    display: flex;
+  }
+
+  .karmaValue {
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--black);
+  }
+
+  .karmaCounter {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    grid-row-gap: 7px;
+  }
+
+  .karmaCounter > * + * {
+    padding: 0;
+  }
+}
