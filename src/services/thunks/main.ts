@@ -59,9 +59,7 @@ export function getComments(id: string, token: string){
   return function(dispatch: AppDispatch){
     dispatch(getCommentsRequest())
     axios.get(API_URL + `/comments/${id}`, {
-        headers: { 
-          Authorization: 'bearer ' + token
-        },
+        headers: { Authorization: 'bearer ' + token }
       }).then((req) => {
       if(req && req.status === 200){
         const postComments = getPostCommentList(req.data[1].data.children);
@@ -73,5 +71,19 @@ export function getComments(id: string, token: string){
       console.log(err)
       dispatch(getCommentsFailed())
     })
+  }
+}
+
+export function hide(id: string, token: string){
+  return function(dispatch: AppDispatch){
+    axios.get(API_URL + `/rising`, {
+      headers: { 
+        Authorization: 'bearer ' + token
+      },
+      // params: {
+      //   id: id
+      // }
+    }).then((req) => console.log(req)
+    ).catch((err) => console.log(err))
   }
 }

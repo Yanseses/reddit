@@ -14,7 +14,7 @@ import { getCorrectForm } from "../../utils/js/getCorrectForm";
 import { Upvote } from "./Upvote/Upvote";
 import { PostOverlay } from "./PostOverlay/PostOverlay";
 import { useDispatch, useSelector } from "../../services/hooks";
-import { getComments } from "../../services/thunks/main";
+import { getComments, hide } from "../../services/thunks/main";
 import { useNavigate } from "react-router";
 import { clearComments } from "../../services/actions/main";
 
@@ -26,6 +26,10 @@ export const Post: FC = () => {
   const token = useSelector(store => store.auth.token);
   const postData = useSelector(store => store.main.postModal);  
   const comments = useSelector(store => store.main.comments);
+
+  const handleHidePost = () => {
+    dispatch(hide(postData.id, token))
+  }
 
   const POST_CONTROLS = [
     { 
@@ -44,7 +48,8 @@ export const Post: FC = () => {
     { 
       As: 'li' as const, 
       text: 'Hide', 
-      nameIcon: EIcons.hide 
+      nameIcon: EIcons.hide,
+      onClick: handleHidePost
     },
     { 
       As: 'li' as const, 

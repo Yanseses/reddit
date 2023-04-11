@@ -38,7 +38,7 @@ export const Dropdown: FC<PropsWithChildren<IDropdownProps>> = ({
   const handleClick = (e: SyntheticEvent) => {
     e.stopPropagation();
 
-    if(isOpen === undefined) setIsDropdownOpen(!isDropdownOpen);
+    setIsDropdownOpen(!isDropdownOpen);
   }
 
   if(!node) return null;

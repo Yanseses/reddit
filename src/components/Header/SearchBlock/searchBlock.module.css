@@ -16,6 +16,11 @@
   align-items: center;
 }
 
+.searchBlock__messages:hover > span > svg > path {
+  fill: var(--orange);
+  cursor: pointer;
+}
+
 .searchBlock__messageCount {
   padding: 2px 5px;
   border-radius: 100%;

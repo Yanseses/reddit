@@ -10,7 +10,7 @@ import { IItem } from "../../../../utils/types";
 export const Menu: FC = () => {
   const handleItemClick = (event: MouseEvent) => {
     event.stopPropagation();
-    
+
     console.log(event)
   }
 
