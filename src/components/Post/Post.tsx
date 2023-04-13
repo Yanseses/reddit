@@ -14,7 +14,7 @@ import { getCorrectForm } from "../../utils/js/getCorrectForm";
 import { Upvote } from "./Upvote/Upvote";
 import { PostOverlay } from "./PostOverlay/PostOverlay";
 import { useDispatch, useSelector } from "../../services/hooks";
-import { getComments, hide } from "../../services/thunks/main";
+import { getComments } from "../../services/thunks/main";
 import { useNavigate } from "react-router";
 import { clearComments } from "../../services/actions/main";
 
@@ -28,7 +28,19 @@ export const Post: FC = () => {
   const comments = useSelector(store => store.main.comments);
 
   const handleHidePost = () => {
-    dispatch(hide(postData.id, token))
+    console.log('Hide Post')
+  }
+
+  const handleSharePost = () => {
+    console.log('Share Post')
+  }
+
+  const handleSavePost = () => {
+    console.log('Save Post')
+  }
+
+  const handleReportPost = () => {
+    console.log('Report Post')
   }
 
   const POST_CONTROLS = [
@@ -43,7 +55,8 @@ export const Post: FC = () => {
     { 
       As: 'li' as const, 
       text: 'Share', 
-      nameIcon: EIcons.share
+      nameIcon: EIcons.share,
+      onClick: handleSharePost
     },
     { 
       As: 'li' as const, 
@@ -55,11 +68,13 @@ export const Post: FC = () => {
       As: 'li' as const, 
       text: 'Save', 
       nameIcon: EIcons.save,
+      onClick: handleSavePost
     },
     { 
       As: 'li' as const, 
       text: 'Report', 
-      nameIcon: EIcons.complain 
+      nameIcon: EIcons.complain,
+      onClick: handleReportPost
     }
   ].map(generateId) as IItem[];
 

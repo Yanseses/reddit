@@ -19,9 +19,9 @@ export const Comment: FC<ICommentData> = ({ author, created, id, title, replies,
   }
  
   const COMMENT_CONTROLS = [
-    { As: 'li' as const, text: 'Answer', nameIcon: EIcons.comments, onClick: handleAnswer },
+    { As: 'li' as const, text: 'Reply', nameIcon: EIcons.comments, onClick: handleAnswer },
     { As: 'li' as const, text: 'Share', nameIcon: EIcons.share },
-    { As: 'li' as const, text: 'Report', nameIcon: EIcons.complain }
+    { As: 'li' as const, text: 'Save', nameIcon: EIcons.save }
   ].map(generateId) as IItem[];
 
   return (

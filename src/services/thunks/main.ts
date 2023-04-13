@@ -73,17 +73,3 @@ export function getComments(id: string, token: string){
     })
   }
 }
-
-export function hide(id: string, token: string){
-  return function(dispatch: AppDispatch){
-    axios.get(API_URL + `/rising`, {
-      headers: { 
-        Authorization: 'bearer ' + token
-      },
-      // params: {
-      //   id: id
-      // }
-    }).then((req) => console.log(req)
-    ).catch((err) => console.log(err))
-  }
-}

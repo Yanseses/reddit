@@ -15,7 +15,6 @@ export const Menu: FC = () => {
   }
 
   const MENU_LIST = [
-    { As: 'li' as const, text: 'Comments', nameIcon: EIcons.comments, onClick: handleItemClick },
     { As: 'li' as const, text: 'Share', nameIcon: EIcons.share, onClick: handleItemClick },
     { As: 'li' as const, text: 'Hide', nameIcon: EIcons.hide, onClick: handleItemClick },
     { As: 'li' as const, text: 'Save', nameIcon: EIcons.save, onClick: handleItemClick },
