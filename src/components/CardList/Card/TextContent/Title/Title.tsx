@@ -8,7 +8,7 @@ interface ITitleProps {
 export const Title: FC<ITitleProps> = ({ title }) => {
   return (
     <h2 className={styles.title} >
-      <a href="#">{title}</a>
+      {title}
     </h2>
   )
 }

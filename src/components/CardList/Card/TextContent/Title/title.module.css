@@ -10,10 +10,6 @@
   overflow: hidden;
 }
 
-.title a:hover {
-  color: var(--orange);
-}
-
 @media all and (min-width: 1024px){
   .title {
     order: 0;
