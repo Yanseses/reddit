@@ -6,7 +6,6 @@ import { TextContent } from "../CardList/Card/TextContent/TextContent";
 import { IItem } from "../../utils/types";
 import { EIcons, Icon } from "../Icon/Icon";
 import { CommentForm } from "./CommentForm/CommentForm";
-import { CommentList } from "./CommentList/CommentList";
 import { PostContent } from "./PostContent/PostContent";
 import { generateId } from "../../utils/react/generateRandomIndex";
 import { Controls } from "../Controls/Controls";
@@ -17,6 +16,7 @@ import { useDispatch, useSelector } from "../../services/hooks";
 import { getComments } from "../../services/thunks/main";
 import { useNavigate } from "react-router";
 import { clearComments } from "../../services/actions/main";
+import { Comments } from "./Comments/Comments";
 
 export const Post: FC = () => {
   const navigate = useNavigate();
@@ -25,7 +25,6 @@ export const Post: FC = () => {
   const dispatch = useDispatch();
   const token = useSelector(store => store.auth.token);
   const postData = useSelector(store => store.main.postModal);  
-  const comments = useSelector(store => store.main.comments);
 
   const handleHidePost = () => {
     console.log('Hide Post')
@@ -147,7 +146,7 @@ export const Post: FC = () => {
               <Upvote upvote={postData.upvoteRatio} />
             </div>
             <CommentForm />
-            <CommentList data={comments}/>
+            <Comments />
           </div>
         </div>
         ) 

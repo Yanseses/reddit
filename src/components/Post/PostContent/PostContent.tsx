@@ -12,7 +12,7 @@ export const PostContent: FC<IPostContent> = ({ value }) => {
     .split('\n')
     .filter((el: string) => el.length > 1);
   const description = postData
-    .map((text: string) => new Object({text: text}))
+    .map((text: string) => ({text: text}))
     .map((obj) => generateId(obj));
 
   return (

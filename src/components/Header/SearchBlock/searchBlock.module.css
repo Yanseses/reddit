@@ -16,11 +16,11 @@
   column-gap: 7px;
   align-items: center;
   order: 5;
+  cursor: pointer;
 }
 
 .searchBlock__messages:hover > span > svg > path {
   fill: var(--orange);
-  cursor: pointer;
 }
 
 .searchBlock__messageCount {

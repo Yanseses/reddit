@@ -38,7 +38,7 @@ interface IGetCommentsRequest {
 }
 
 interface IGetCommentsFailed {
-  readonly type: typeof GET_COMMENTS_FAILED
+  readonly type: typeof GET_COMMENTS_FAILED,
 }
 
 interface IGetCommentsSucces {
@@ -95,7 +95,7 @@ export const getCommentsRequest = (): IGetCommentsRequest => {
 
 export const getCommentsFailed = (): IGetCommentsFailed => {
   return {
-    type: GET_COMMENTS_FAILED
+    type: GET_COMMENTS_FAILED,
   }
 }
 

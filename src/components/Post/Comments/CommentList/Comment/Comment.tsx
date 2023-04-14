@@ -1,15 +1,15 @@
 import React, { FC, useState } from "react";
-import { generateId } from "../../../../utils/react/generateRandomIndex";
-import { CarmaCounter } from "../../../Buttons";
-import { CreateAt } from "../../../CardList/Card/TextContent/CreateAt/CreateAt";
-import { Author } from "../../../CardList/Card/TextContent/Author/Author";
-import { Controls } from "../../../Controls/Controls";
-import { EIcons } from "../../../Icon/Icon";
-import { Text } from "../../../Text/Text";
+import { generateId } from "../../../../../utils/react/generateRandomIndex";
+import { CarmaCounter } from "../../../../Buttons";
+import { CreateAt } from "../../../../CardList/Card/TextContent/CreateAt/CreateAt";
+import { Author } from "../../../../CardList/Card/TextContent/Author/Author";
+import { Controls } from "../../../../Controls/Controls";
+import { EIcons } from "../../../../Icon/Icon";
+import { Text } from "../../../../Text/Text";
 import { CommentList } from "../CommentList";
 import styles from './comment.module.css';
-import { ICommentData, IItem } from "../../../../utils/types";
-import { CommentForm } from "../../CommentForm/CommentForm";
+import { ICommentData, IItem } from "../../../../../utils/types";
+import { CommentForm } from "../../../CommentForm/CommentForm";
 
 export const Comment: FC<ICommentData> = ({ author, created, id, title, replies, likes }) => {
   const [isFormView, setIsFormView] = useState(false);

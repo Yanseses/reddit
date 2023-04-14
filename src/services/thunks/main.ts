@@ -46,7 +46,7 @@ export function getPosts(token: string){
         }
         dispatch(getPostsSuccess(data))
       } else {
-        throw Promise.reject('Ошибка: ' + req.statusText)
+        throw Promise.reject('Error: ' + req.statusText)
       }
     }).catch(err => {
       console.log(err)
@@ -62,10 +62,14 @@ export function getComments(id: string, token: string){
         headers: { Authorization: 'bearer ' + token }
       }).then((req) => {
       if(req && req.status === 200){
-        const postComments = getPostCommentList(req.data[1].data.children);
-        dispatch(getCommentsSucces(postComments))
+        if(req.data.children){
+          const postComments = getPostCommentList(req.data[1].data.children);
+          dispatch(getCommentsSucces(postComments))
+        } else {
+          throw Promise.reject('User unauthorized')
+        }
       } else {
-        throw Promise.reject('Ошибка: ' + req.statusText)
+        throw Promise.reject('Error: ' + req.statusText)
       }
     }).catch((err) => {
       console.log(err)

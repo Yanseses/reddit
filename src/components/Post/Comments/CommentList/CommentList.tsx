@@ -1,8 +1,7 @@
 import React, { FC } from "react";
 import styles from './commentList.module.css';
 import { Comment } from "./Comment/Comment";
-import { ICommentData } from "../../../utils/types";
-import { Loader } from "../../Loader/Loader";
+import { ICommentData } from "../../../../utils/types";
 
 export interface ICommentList {
   data: ICommentData[]
@@ -18,14 +17,6 @@ export const CommentList: FC<ICommentList> = ({ data }) => {
           ) 
         }
       </ul>
-
-      { data.length === 0 && (
-        <Loader 
-          text="Loading..." 
-          position="center" 
-          height="150px"/> 
-        ) 
-      }
     </>
   )
 }
