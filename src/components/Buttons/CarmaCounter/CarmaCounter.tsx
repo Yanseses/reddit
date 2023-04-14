@@ -1,6 +1,8 @@
 import React, { FC, SyntheticEvent, useState } from "react"
 import { Icon, EIcons } from "../../Icon/Icon";
 import styles from './carmaCounter.module.css';
+import { useDispatch } from "../../../services/hooks";
+import { changeCarma } from "../../../services/actions/main";
 
 interface ICarmaProps {
   counter?: number,
@@ -9,19 +11,23 @@ interface ICarmaProps {
 }
 
 export const CarmaCounter: FC<ICarmaProps> = ({ counter, id, likes = null }) => {
-  const [ carma, setCarma ] = useState(likes);
+  const dispatch = useDispatch();
+  const [ carma, setCarma ] = useState<boolean | null>(likes);
+
   const handleUpCarma = (e: SyntheticEvent) => {
     e.stopPropagation()
 
-    // Add post request to change carma and change state comments/posts
-    carma === true ? setCarma(null) : setCarma(true)
+    const like = carma === true ? null : carma === false ? null : true;
+    setCarma(like)
+    dispatch(changeCarma(id, like))
   }
 
   const handleDownCarma = (e: SyntheticEvent) => {
     e.stopPropagation()
 
-    // Add post request to change carma and change state comments/posts
-    carma === false ? setCarma(null) : setCarma(false)
+    const like = carma === false ? null : carma === true ? null : false;
+    setCarma(like)
+    dispatch(changeCarma(id, like))
   }
   
   return (

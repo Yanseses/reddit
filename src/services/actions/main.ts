@@ -8,6 +8,7 @@ import {
   GET_COMMENTS_FAILED,
   GET_COMMENTS_SUCCESS,
   CLEAR_COMMENTS,
+  CHANGE_CARMA,
 } from "../actionTypes/main"
 import { IPosts } from "../reducers/main"
 
@@ -46,6 +47,14 @@ interface IGetCommentsSucces {
   payload: ICommentData
 }
 
+interface IChangeCarma {
+  readonly type: typeof CHANGE_CARMA,
+  payload: {
+    id: string,
+    carma: boolean | null
+  }
+}
+
 export type TMainActions = IGetPostsRequest
   | IGetPostsFailed
   | IGetPostsSuccess
@@ -54,6 +63,7 @@ export type TMainActions = IGetPostsRequest
   | IGetCommentsFailed
   | IGetCommentsSucces
   | IClearComments
+  | IChangeCarma
 
 export const getPostsRequest = (): IGetPostsRequest => {
   return {
@@ -103,5 +113,15 @@ export const getCommentsSucces = (comments: ICommentData): IGetCommentsSucces =>
   return {
     type: GET_COMMENTS_SUCCESS,
     payload: comments
+  }
+}
+
+export const changeCarma = (id: string, carma: boolean | null): IChangeCarma => {
+  return {
+    type: CHANGE_CARMA,
+    payload: {
+      id: id,
+      carma: carma
+    }
   }
 }

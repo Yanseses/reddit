@@ -2,6 +2,7 @@ import { Reducer } from "redux"
 import { ICommentData, IPostData } from "../../utils/types"
 import { 
   ADD_POST_MODAL,
+  CHANGE_CARMA,
   CLEAR_COMMENTS,
   GET_COMMENTS_FAILED,
   GET_COMMENTS_REQUEST,
@@ -105,6 +106,21 @@ export const mainStore: Reducer = (state: TMainState = mainState, action: TMainA
         commentsRequest: false,
         commetsFailed: false,
         comments: action.payload
+      }
+    }
+    case CHANGE_CARMA: {
+      return {
+        ...state,
+        posts: {
+          ...state.posts,
+          postData: state.posts.postData.map((el) => {
+            if(el.id === action.payload.id){
+              el.likes = action.payload.carma
+              return el;
+            }
+            return el;
+          })
+        }
       }
     }
     default: {

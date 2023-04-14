@@ -62,7 +62,7 @@ export function getComments(id: string, token: string){
         headers: { Authorization: 'bearer ' + token }
       }).then((req) => {
       if(req && req.status === 200){
-        if(req.data.children){
+        if(req.data[1].data.children){
           const postComments = getPostCommentList(req.data[1].data.children);
           dispatch(getCommentsSucces(postComments))
         } else {
