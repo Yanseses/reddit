@@ -1,6 +1,12 @@
 .content {
   overflow-y: scroll;
-  height: 83%;
+  height: 80%;
+}
+
+@media all and (min-width: 1024px){
+  .content {
+    height: 83%;
+  }
 }
 
 @media all and (min-width: 1540px){
