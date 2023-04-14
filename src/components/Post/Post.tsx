@@ -24,7 +24,7 @@ export const Post: FC = () => {
   const postRef = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
   const token = useSelector(store => store.auth.token);
-  const postData = useSelector(store => store.main.postModal);  
+  const postData = useSelector(store => store.main.postModal);
 
   const handleHidePost = () => {
     console.log('Hide Post')
@@ -149,7 +149,7 @@ export const Post: FC = () => {
             <Comments />
           </div>
         </div>
-        ) 
+        )
       }
     </PostOverlay>
     ), node)

@@ -11,11 +11,13 @@ export const Header: FC = () => {
   return (
     <header className={styles.header}>
       <SearchBlock />
-      <ThreadTitle />
-      { !userAuth && (
-        <SortBlock />
-        ) 
-      }
+      <div className={styles.header__title}>
+        <ThreadTitle />
+        { !userAuth && (
+          <SortBlock />
+          ) 
+        }
+      </div>
     </header>
   )
 }
