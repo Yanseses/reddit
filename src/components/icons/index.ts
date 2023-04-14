@@ -9,3 +9,5 @@ export * from './AnonIcon';
 export * from './CrossIcon';
 export * from './SearchIcon';
 export * from './MessageIcon';
+export * from './BestIcon';
+export * from './ArrowIcon';

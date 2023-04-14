@@ -117,28 +117,30 @@ export const Post: FC = () => {
     <PostOverlay postRef={postRef}>
       { postData && (
         <div className={styles.modal}>
-          <CarmaCounter 
-            counter={postData.score} 
-            id={postData.id} 
-            likes={postData.likes}/>
+          <div className={styles.modal__header}>
+            <CarmaCounter 
+              counter={postData.score} 
+              id={postData.id} 
+              likes={postData.likes}/>
 
-          <TextContent 
-            author={postData.author}
-            title={postData.title}
-            created={postData.created}
-            avatar={postData.avatar} />
+            <TextContent 
+              author={postData.author}
+              title={postData.title}
+              created={postData.created}
+              avatar={postData.avatar} />
 
-          <Icon 
-            className={styles.cross} 
-            name={EIcons.cross} 
-            height={21} 
-            width={21} 
-            onClick={handleClose}
-            />
+            <Icon 
+              className={styles.modal__cross} 
+              name={EIcons.cross} 
+              height={21} 
+              width={21} 
+              onClick={handleClose}
+              />
+          </div>
         
-          <div className={styles.main}>
+          <div className={styles.modal__main}>
             <PostContent value={postData.content}/>
-            <div className={styles.controls}>
+            <div className={styles.modal__controls}>
               <Controls 
                 list={POST_CONTROLS} 
                 listType={'controls'}/>

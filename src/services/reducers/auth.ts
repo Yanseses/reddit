@@ -8,11 +8,13 @@ import {
   GET_USER_SUCCESS 
 } from "../actionTypes/auth";
 import { TAuthActions } from "../actions/auth";
+import { IUserData } from "../../utils/types";
 
 interface IAuthState {
   userRequest: boolean,
   userFailed: boolean,
-  user: null,
+  user: null | IUserData,
+  userAuthorized: boolean,
   tokenRequest: boolean,
   tokenFailed: boolean,
   token: string
@@ -22,6 +24,7 @@ export const authState = {
   userRequest: false,
   userFailed: false,
   user: null,
+  userAuthorized: false,
   tokenRequest: false,
   tokenFailed: false,
   token: ''
@@ -47,7 +50,8 @@ export const authStore: Reducer = (state: IAuthState = authState, action: TAuthA
         ...state,
         tokenRequest: false,
         tokenFailed: false,
-        token: action.payload
+        token: action.payload,
+        userAuthorized: true
       }
     }
     case GET_USER_REQUEST: {

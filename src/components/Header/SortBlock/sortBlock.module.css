@@ -1,8 +1,12 @@
 .sortBlock {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
   background-color: var(--white);
   padding: 11px 20px;
   border-radius: 7px;
   margin: 0 0 20px;
+  cursor: pointer;
 }
 
 @media all and (min-width: 1024px){

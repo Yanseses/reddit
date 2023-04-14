@@ -18,7 +18,8 @@ export interface IPostData {
 
 export interface IUserData {
   name?: string,
-  iconImg?: string
+  iconImg?: string,
+  messages: number
 }
 
 export interface ICommentData {

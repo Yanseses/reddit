@@ -33,7 +33,7 @@ export function getToken(secretCode: string){
     })
   }
 }
-// Сделать рефреш токен https://stateful.com/blog/reddit-oauth (инструкция)
+// refresh token https://stateful.com/blog/reddit-oauth
 
 export function getUser(token: string){
   return function(dispatch: AppDispatch){
@@ -44,7 +44,8 @@ export function getUser(token: string){
       if(req && req.status === 200){
         const user = {
           avatarSrc: req.data.icon_img,
-          name: req.data.name
+          name: req.data.name,
+          messages: req.data.inbox_count
         }
         dispatch(getUserSuccess(user))
       } else {

@@ -11,7 +11,9 @@ import {
   AnonIcon, 
   CrossIcon,
   SearchIcon,
-  MessageIcon
+  MessageIcon,
+  BestIcon,
+  ArrowIcon
 } from "../icons";
 
 export enum EIcons {
@@ -25,7 +27,9 @@ export enum EIcons {
   anon = 'AnonIcon',
   cross = 'CrossIcon',
   search = 'SearchIcon',
-  message = 'MessageIcon'
+  message = 'MessageIcon',
+  best = 'BestIcon',
+  arrow = 'ArrowIcon'
 }
 
 interface IIconsProps {
@@ -72,5 +76,7 @@ function getIconComponent(name: EIcons){
     case EIcons.anon: return <AnonIcon />
     case EIcons.search: return <SearchIcon />
     case EIcons.message: return <MessageIcon />
+    case EIcons.best: return <BestIcon />
+    case EIcons.arrow: return <ArrowIcon />
   }
 }
