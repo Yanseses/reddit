@@ -1,4 +1,6 @@
-export function getPostition(ref: any){
+import { RefObject } from "react";
+
+export function getPostition(ref: RefObject<HTMLElement>){
   const windowWidhth = window.screen.width;
   const positionTop = ref.current?.getBoundingClientRect().top || 0;
   const menuHeight = ref.current?.getBoundingClientRect().height || 0;

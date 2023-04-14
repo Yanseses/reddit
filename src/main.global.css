@@ -15,21 +15,23 @@
   --grey66: hsl(0, 0%, calc(var(--whiteLightness) - 60%));
 }
 
-::-webkit-scrollbar {
-  width: 7px;
-  margin-bottom: 50%;
-  background-color: var(--greyEC);
-  border-radius: 30px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--greyD9);
-  border-radius: 30px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--orange);
-  cursor: pointer;
+@media all and (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 7px;
+    margin-bottom: 50%;
+    background-color: var(--greyEC);
+    border-radius: 30px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--greyD9);
+    border-radius: 30px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--orange);
+    cursor: pointer;
+  }
 }
 
 body {
