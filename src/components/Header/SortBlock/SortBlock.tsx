@@ -8,8 +8,8 @@ export function SortBlock(){
     <div className={styles.sortBlock}>
       <Icon name={EIcons.best} width={14} height={16} />
       <Text As="p" size={20} color={EColors.orange} mobileSize={12}>
-          The Best
-        </Text>
+        The Best
+      </Text>
       <Icon name={EIcons.arrow} width={14} height={8} />
     </div>
   )

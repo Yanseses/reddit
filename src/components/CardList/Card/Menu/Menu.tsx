@@ -3,7 +3,6 @@ import styles from './menu.module.css';
 import { Dropdown } from "../../../Dropdown/Dropdown";
 import { Controls } from "../../../Controls/Controls";
 import { generateId } from "../../../../utils/react/generateRandomIndex";
-import { Text, EColors } from "../../../Text/Text";
 import { Icon, EIcons } from "../../../Icon/Icon";
 import { IItem } from "../../../../utils/types";
 
@@ -27,13 +26,8 @@ export const Menu: FC = () => {
         <button className={styles.menuBtn}>
           <Icon name={EIcons.menu} width={5} height={20} />
         </button>
-      }>
+        }>
         <Controls list={MENU_LIST} listType={'menu'}/>
-        <button className={styles.closeBtn}>
-          <Text size={14} mobileSize={12} color={EColors.grey66}>
-            Close
-          </Text>
-        </button>
       </Dropdown>
     </div>
   )
