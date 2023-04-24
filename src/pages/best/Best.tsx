@@ -13,10 +13,10 @@ import { Card } from "../../components/CardList/Card/Card";
 export function Best(){
   const dispatch = useDispatch();
   const bottomOfList = useRef<HTMLDivElement>(null);
-  const token = useSelector(store => store.auth.token);
-  const postRequest = useSelector(store => store.main.postRequest);
-  const postData = useSelector(store => store.main.posts.postData);
-  const postCounter = useSelector(store => store.main.posts.counter);
+  const token = useSelector(store => store.auth.token.data);
+  const postRequest = useSelector(store => store.main.posts.request);
+  const postData = useSelector(store => store.main.posts.data.list);
+  const postCounter = useSelector(store => store.main.posts.data.counter);
 
   const handleUpload = () => {
     dispatch(getPosts(token))

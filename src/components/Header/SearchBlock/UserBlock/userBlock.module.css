@@ -8,15 +8,15 @@
   color: var(--orange);
 }
 
-.userBox:hover .avatarBox {
+.userBox:hover .userBox__avatarWrapper {
   box-shadow: 0 0 0 1px var(--orange);
 }
 
-.userBox:hover .avatarBox > span > svg > path {
+.userBox:hover .userBox__avatarWrapper > span > svg > path {
   fill: var(--orange);
 }
 
-.avatarBox {
+.userBox__avatarWrapper {
   width: 60px;
   height: 60px;
   padding: 5px;
@@ -24,20 +24,22 @@
   box-shadow: none;
 }
 
-.avatarImage {
+.userBox__avatar {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 100%;
 }
 
-.userName {
+.userBox__userName {
   display: none;
 }
 
 @media all and (min-width: 1024px){
-  .userName {
+  .userBox {
+    column-gap: 8px;
+  }
+  .userBox__userName {
     display: flex;
-    margin-left: 8px;
   }
 }

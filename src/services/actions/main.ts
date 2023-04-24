@@ -10,7 +10,7 @@ import {
   CLEAR_COMMENTS,
   CHANGE_CARMA,
 } from "../actionTypes/main"
-import { IPosts } from "../reducers/main"
+import { IPostsList } from "../reducers/main"
 
 interface IGetPostsRequest {
   readonly type: typeof GET_POSTS_REQUEST
@@ -22,7 +22,7 @@ interface IGetPostsFailed {
 
 interface IGetPostsSuccess {
   readonly type: typeof GET_POSTS_SUCCESS,
-  payload: IPosts
+  payload: IPostsList
 }
 
 interface IAddPostModal {
@@ -77,7 +77,7 @@ export const getPostsFailed = (): IGetPostsFailed => {
   }
 }
 
-export const getPostsSuccess = (data: IPosts): IGetPostsSuccess => {
+export const getPostsSuccess = (data: IPostsList): IGetPostsSuccess => {
   return {
     type: GET_POSTS_SUCCESS,
     payload: data

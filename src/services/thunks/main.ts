@@ -11,7 +11,7 @@ import { API_URL } from "../../utils/constants";
 import { AppDispatch } from "../types/types"
 import { getPostCommentList } from "../../utils/js/getPostCommentList";
 import { store } from '../../App';
-import { IPosts } from "../reducers/main";
+import { IPostsList } from "../reducers/main";
 
 export function getPosts(token: string){
   return function(dispatch: AppDispatch){
@@ -25,10 +25,10 @@ export function getPosts(token: string){
       }
     }).then(req => {
       if(req && req.status === 200){
-        const data: IPosts = {
+        const data: IPostsList = {
           before: req.data.data.before,
           after: req.data.data.after,
-          postData: req.data.data.children.map((el: any) => ({
+          list: req.data.data.children.map((el: any) => ({
             id: el.data.id, 
             subreddit: el.data.subreddit,
             author: el.data.author, 

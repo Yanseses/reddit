@@ -4,8 +4,8 @@ import { CommentList } from "./CommentList/CommentList";
 import { Loader } from "../../Loader/Loader";
 
 export const Comments: FC = () => {
-  const comments = useSelector(store => store.main.comments);
-  const commentsRequest = useSelector(store => store.main.commentsRequest);
+  const comments = useSelector(store => store.main.comments.data);
+  const commentsRequest = useSelector(store => store.main.comments.request);
   
   return (
     <>

@@ -11,38 +11,54 @@ import {
   GET_POSTS_REQUEST, 
   GET_POSTS_SUCCESS
 } from "../actionTypes/main"
-import { TMainActions } from "../actions/main"
+import { TMainActions } from "../actions/main";
 
-export interface IPosts {
+export interface IComments {
+  request: boolean,
+  failed: boolean,
+  error: string,
+  data: Array<ICommentData>
+}
+
+export interface IPostsList {
+  list: Array<IPostData>
   before: string,
   after: string,
-  postData: Array<IPostData>,
   counter: number
 }
 
+export interface IPosts {
+  request: boolean,
+  failed: boolean,
+  error: string,
+  data: IPostsList
+}
+
 type TMainState = {
-  postRequest: boolean,
-  postFailed: boolean,
   posts: IPosts,
-  postModal: null | IPostData,
-  commentsRequest: boolean,
-  commetsFailed: boolean,
-  comments: Array<ICommentData>
+  modal: null | IPostData,
+  comments: IComments
 }
 
 export const mainState = {
-  postRequest: false,
-  postFailed: false,
   posts: {
-    postData: [],
-    before: '',
-    after: '',
-    counter: 0
+    request: false,
+    failed: false,
+    error: '',
+    data: {
+      list: [],
+      before: '',
+      after: '',
+      counter: 0
+    }
   },
-  postModal: null,
-  commentsRequest: false,
-  commetsFailed: false,
-  comments: []
+  modal: null,
+  comments: {
+    request: false,
+    failed: false,
+    error: '',
+    data: []
+  }
 }
 
 export const mainStore: Reducer = (state: TMainState = mainState, action: TMainActions) => {
@@ -50,62 +66,84 @@ export const mainStore: Reducer = (state: TMainState = mainState, action: TMainA
     case GET_POSTS_REQUEST: {
       return {
         ...state,
-        postRequest: true,
+        posts: {
+          ...state.posts,
+          request: true
+        },
       }
     }
     case GET_POSTS_FAILED: {
       return {
         ...state,
-        postRequest: false,
-        postFailed: true
+        posts: {
+          ...state.posts,
+          request: false,
+          failed: true,
+          error: ''
+        }
       }
     }
     case GET_POSTS_SUCCESS: {
       return {
         ...state,
-        postRequest: false,
-        postFailed: false,
         posts: {
-          counter: action.payload.counter,
-          after: action.payload.after,
-          before: action.payload.before,
-          postData: state.posts.postData.length > 0 
-            ? state.posts.postData.concat(action.payload.postData)
-            : action.payload.postData
+          request: false,
+          failed: false,
+          error: '',
+          data: {
+            before: action.payload.before,
+            after: action.payload.after,
+            list: state.posts.data.list.length > 0
+              ? state.posts.data.list.concat(action.payload.list)
+              : action.payload.list
+          }
         }
       }
     }
     case ADD_POST_MODAL: {
       return {
         ...state,
-        postModal: state.posts.postData.find((el: IPostData) => action.payload === el.id)
+        modal: state.posts.data.list.find((el: IPostData) => action.payload === el.id)
       }
     }
     case CLEAR_COMMENTS: {
       return {
         ...state,
-        comments: []
+        comments: {
+          ...state.comments,
+          data: []
+        }
       }
     }
     case GET_COMMENTS_REQUEST: {
       return {
         ...state,
-        commentsRequest: true,
+        comments: {
+          ...state.comments,
+          request: true
+        }
       }
     }
     case GET_COMMENTS_FAILED: {
       return {
         ...state,
-        commentsRequest: false,
-        commetsFailed: true
+        comments: {
+          ...state.comments,
+          request: false,
+          failed: true,
+          error: ''
+        }
       }
     }
     case GET_COMMENTS_SUCCESS: {
       return {
         ...state,
-        commentsRequest: false,
-        commetsFailed: false,
-        comments: action.payload
+        comments: {
+          request: false,
+          failed: false,
+          error: '',
+          data: action.payload
+        }
       }
     }
     case CHANGE_CARMA: {
@@ -113,13 +151,16 @@ export const mainStore: Reducer = (state: TMainState = mainState, action: TMainA
         ...state,
         posts: {
           ...state.posts,
-          postData: state.posts.postData.map((el) => {
-            if(el.id === action.payload.id){
-              el.likes = action.payload.carma
+          data: {
+            ...state.posts.data,
+            list: state.posts.data.list.map((el) => {
+              if(el.id === action.payload.id) {
+                el.likes = action.payload.carma
+                return el;
+              }
               return el;
-            }
-            return el;
-          })
+            })
+          }
         }
       }
     }

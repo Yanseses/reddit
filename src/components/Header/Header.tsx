@@ -6,7 +6,7 @@ import { SortBlock } from "./SortBlock/SortBlock";
 import { useSelector } from "../../services/hooks";
 
 export const Header: FC = () => {
-  const userAuth = useSelector(store => store.auth.userAuthorized);
+  const userAuth = useSelector(store => store.auth.user.authorized);
 
   return (
     <header className={styles.header}>

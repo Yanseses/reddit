@@ -23,8 +23,8 @@ export const Post: FC = () => {
   const node = document.querySelector('#post');
   const postRef = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
-  const token = useSelector(store => store.auth.token);
-  const postData = useSelector(store => store.main.postModal);
+  const token = useSelector(store => store.auth.token.data);
+  const postData = useSelector(store => store.main.modal);
 
   const handleHidePost = () => {
     console.log('Hide Post')

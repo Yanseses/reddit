@@ -6,7 +6,7 @@ import { Text } from "../../Text/Text";
 import { useSelector } from "../../../services/hooks";
 
 export const SearchBlock: FC = () => {  
-  const user = useSelector(store => store.auth.user);
+  const user = useSelector(store => store.auth.user.data);
 
   return (
     <div className={styles.searchBlock}>

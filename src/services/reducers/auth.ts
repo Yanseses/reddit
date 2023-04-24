@@ -11,23 +11,35 @@ import { TAuthActions } from "../actions/auth";
 import { IUserData } from "../../utils/types";
 
 interface IAuthState {
-  userRequest: boolean,
-  userFailed: boolean,
-  user: null | IUserData,
-  userAuthorized: boolean,
-  tokenRequest: boolean,
-  tokenFailed: boolean,
-  token: string
+  user: {
+    request: boolean,
+    failed: boolean,
+    error: string,
+    data: null | IUserData,
+    authorized: boolean
+  },
+  token: {
+    request: boolean,
+    failed: boolean,
+    error: string,
+    data: string
+  }
 }
 
 export const authState = {
-  userRequest: false,
-  userFailed: false,
-  user: null,
-  userAuthorized: false,
-  tokenRequest: false,
-  tokenFailed: false,
-  token: ''
+  user: {
+    request: false,
+    failed: false,
+    error: '',
+    data: null,
+    authorized: false
+  },
+  token: {
+    request: false,
+    failed: false,
+    error: '',
+    data: ''
+  }
 }
 
 export const authStore: Reducer = (state: IAuthState = authState, action: TAuthActions) => {
@@ -35,44 +47,68 @@ export const authStore: Reducer = (state: IAuthState = authState, action: TAuthA
     case GET_TOKEN_REQUEST: {
       return {
         ...state,
-        tokenRequest: true
+        token: {
+          ...state.token,
+          request: true
+        }
       }
     }
     case GET_TOKEN_FAILED: {
       return {
         ...state,
-        tokenRequest: false,
-        tokenFailed: true
+        token: {
+          ...state.token,
+          request: false,
+          failed: true,
+          error: ''
+        }
       }
     }
     case GET_TOKEN_SUCCESS: {
       return {
         ...state,
-        tokenRequest: false,
-        tokenFailed: false,
-        token: action.payload,
-        userAuthorized: true
+        token: {
+          request: false,
+          failed: false,
+          error: '',
+          data: action.payload
+        },
+        user: {
+          ...state.user,
+          authorized: true
+        }
       }
     }
     case GET_USER_REQUEST: {
       return {
         ...state,
-        userRequest: true
+        user: {
+          ...state.user,
+          request: true
+        }
       }
     }
     case GET_USER_FAILED: {
       return {
         ...state,
-        userRequest: false,
-        userFailed: true
+        user: {
+          ...state.user,
+          request: false,
+          failed: true,
+          error: ''
+        }
       }
     }
     case GET_USER_SUCCESS: {
       return {
         ...state,
-        userRequest: false,
-        userFailed: false,
-        user: action.payload
+        user: {
+          ...state.user,
+          request: false,
+          failed: false,
+          error: '',
+          data: action.payload
+        }
       }
     }
     default: {
