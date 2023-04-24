@@ -10,13 +10,17 @@ export const Header: FC = () => {
 
   return (
     <header className={styles.header}>
-      <SearchBlock />
-      <div className={styles.header__title}>
-        <ThreadTitle />
-        { !userAuth && (
-          <SortBlock />
-          ) 
-        }
+      <div className={styles.header__head}>
+        <SearchBlock />
+        <div className={styles.header__title}>
+          <ThreadTitle />
+          { !userAuth ? (
+            <SortBlock />
+            ) : (
+            <SortBlock auth/>
+            )
+          }
+        </div>
       </div>
     </header>
   )

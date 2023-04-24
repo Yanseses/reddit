@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 
-.menuItem:hover > span {
+.menuItem:hover > p {
   color: var(--orange);
 }
 
@@ -34,10 +34,20 @@
   cursor: pointer;
 }
 
-.controlsItem:hover > span {
+.controlsItem > p {
+  display: none;
+}
+
+.controlsItem:hover > p {
   color: var(--orange);
 }
 
 .controlsItem:hover > span > svg > path {
   fill: var(--orange);
+}
+
+@media all and (min-width: 1024px) {
+  .controlsItem > p {
+    display: block;
+  }
 }

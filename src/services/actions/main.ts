@@ -17,7 +17,8 @@ interface IGetPostsRequest {
 }
 
 interface IGetPostsFailed {
-  readonly type: typeof GET_POSTS_FAILED
+  readonly type: typeof GET_POSTS_FAILED,
+  payload: string
 }
 
 interface IGetPostsSuccess {
@@ -40,6 +41,7 @@ interface IGetCommentsRequest {
 
 interface IGetCommentsFailed {
   readonly type: typeof GET_COMMENTS_FAILED,
+  payload: string
 }
 
 interface IGetCommentsSucces {
@@ -71,9 +73,10 @@ export const getPostsRequest = (): IGetPostsRequest => {
   }
 }
 
-export const getPostsFailed = (): IGetPostsFailed => {
+export const getPostsFailed = (error: string): IGetPostsFailed => {
   return {
-    type: GET_POSTS_FAILED
+    type: GET_POSTS_FAILED,
+    payload: error
   }
 }
 
@@ -103,9 +106,10 @@ export const getCommentsRequest = (): IGetCommentsRequest => {
   }
 }
 
-export const getCommentsFailed = (): IGetCommentsFailed => {
+export const getCommentsFailed = (error: string): IGetCommentsFailed => {
   return {
     type: GET_COMMENTS_FAILED,
+    payload: error
   }
 }
 

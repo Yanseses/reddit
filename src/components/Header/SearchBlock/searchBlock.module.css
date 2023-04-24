@@ -7,7 +7,7 @@
   background-color: var(--white);
   border-radius: 0 0 7px 7px;
   box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-  margin: 0 0 38px;
+  margin: 0;
   column-gap: 15px;
 }
 
@@ -53,13 +53,13 @@
 @media all and (min-width: 1024px) {
   .searchBlock {
     padding: 0;
-    margin: 0 0 0 auto;
+    margin: 0;
     background-color: transparent;
     border-radius: 0;
     box-shadow: none;
     order: 3;
     display: flex;
-    column-gap: 50px;
+    column-gap: 30px;
   }
 
   .searchBlock__messages {
@@ -68,5 +68,12 @@
 
   .searchBlock__inputWrapper {
     order: initial;
+    width: 360px;
+  }
+}
+
+@media all and (min-width: 1540px) {
+  .searchBlock {
+    column-gap: 50px;
   }
 }

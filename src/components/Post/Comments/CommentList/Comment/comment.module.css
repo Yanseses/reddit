@@ -12,25 +12,30 @@
     word-break: break-all;
   }
   
-  .counter {
+  .comment__counter {
     position: absolute;
     left: -11px;
     padding: 10px 0;
     background-color: var(--white);
   }
   
-  .headComment {
+  .comment__head {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     font-size: 10px;
   }
   
-  .title {
+  .comment__title {
     margin: 10px 0;
   }
   
   @media all and (min-width: 1024px) {
     .comment:not(:first-child) {
       margin-top: 40px;
+    }
+
+    .comment__head {
+      justify-content: initial;
     }
   }

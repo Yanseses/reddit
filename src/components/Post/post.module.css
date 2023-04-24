@@ -17,6 +17,8 @@
 .modal__header {
   display: flex;
   width: 100%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .modal__main {
@@ -53,6 +55,10 @@
     padding: 30px 27px 37px 60px;
     left: calc(10%);
     top: calc(15% - 25px);
+  }
+
+  .modal__header {
+    flex-direction: row;
   }
 
   .modal__main {

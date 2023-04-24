@@ -79,7 +79,7 @@ export const mainStore: Reducer = (state: TMainState = mainState, action: TMainA
           ...state.posts,
           request: false,
           failed: true,
-          error: ''
+          error: action.payload
         }
       }
     }
@@ -111,6 +111,7 @@ export const mainStore: Reducer = (state: TMainState = mainState, action: TMainA
         ...state,
         comments: {
           ...state.comments,
+          error: '',
           data: []
         }
       }
@@ -131,7 +132,7 @@ export const mainStore: Reducer = (state: TMainState = mainState, action: TMainA
           ...state.comments,
           request: false,
           failed: true,
-          error: ''
+          error: action.payload
         }
       }
     }

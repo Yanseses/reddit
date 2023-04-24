@@ -26,8 +26,8 @@ export const Comment: FC<ICommentData> = ({ author, created, id, title, replies,
 
   return (
     <li id={id} className={styles.comment}>
-      <div className={styles.headComment}>
-        <div className={styles.counter}>
+      <div className={styles.comment__head}>
+        <div className={styles.comment__counter}>
           <CarmaCounter id={id} likes={likes}/>
         </div>
         <Author author={author} avatar={''}/>

@@ -1,9 +1,13 @@
-import React from "react";
+import React, { FC } from "react";
 import styles from './sortBlock.module.css';
 import { EIcons, Icon } from "../../Icon/Icon";
 import { EColors, Text } from "../../Text/Text";
 
-export function SortBlock(){
+interface ISortBlock {
+  auth?: boolean
+}
+
+export const SortBlock: FC<ISortBlock> = ({ auth }) => {
   return (
     <div className={styles.sortBlock}>
       <Icon name={EIcons.best} width={14} height={16} />

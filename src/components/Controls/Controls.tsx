@@ -29,12 +29,12 @@ export const Controls: FC<IMenuItemListProps> = ({ list, listType }) => {
         <As 
           className={listType === 'menu' 
             ? styles.menuItem 
-            : styles.controlsItem} 
+            : styles.controlsItem}
           key={id} 
           href={href} 
           onClick={onClick}>
           <Icon name={nameIcon} height={heightIcon} width={widthIcon}/>
-          <Text size={14} color={textColor}>{text}</Text>
+          <Text As="p" size={14} color={textColor}>{text}</Text>
         </As>
       )) }
     </ul>

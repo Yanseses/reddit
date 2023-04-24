@@ -31,14 +31,14 @@ export const CarmaCounter: FC<ICarmaProps> = ({ counter, id, likes = null }) => 
   }
   
   return (
-    <div className={styles.karmaCounter}>
+    <div className={styles.carmaCounter}>
       <button 
-        className={`${styles.up} ${carma === true ? styles.up__active : ''}`} 
+        className={`${styles.carmaCounter__upBtn} ${carma === true ? styles.up__active : ''}`} 
         onClick={handleUpCarma}>
         <Icon name={EIcons.carma} width={19} height={10}/>
       </button>
       { counter &&
-        <span className={styles.karmaValue}>
+        <span className={styles.carmaCounter__value}>
           { counter > 1000 
             ? counter > 1000000 
               ? (counter / 1000000).toFixed(1) + 'M'
@@ -47,7 +47,7 @@ export const CarmaCounter: FC<ICarmaProps> = ({ counter, id, likes = null }) => 
         </span>
       }
       <button 
-        className={`${styles.down} ${carma === false ? styles.down__active : ''}`} 
+        className={`${styles.carmaCounter__downBtn} ${carma === false ? styles.down__active : ''}`} 
         onClick={handleDownCarma}>
         <Icon name={EIcons.carma} width={19} height={10} className={styles.down}/>
       </button>

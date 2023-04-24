@@ -1,8 +1,9 @@
-.karmaCounter > * + * {
-  padding: 0 0 0 4px;
+.carmaCounter {
+  display: flex;
+  align-items: center;
 }
 
-.karmaValue {
+.carmaCounter__value {
   color: var(--greyC4);
 }
 
@@ -19,36 +20,36 @@ svg.down {
 }
 
 @media all and (min-width: 1024px){
-  .karmaCounter > button.up:hover > span > svg > path {
+  .carmaCounter > button.up:hover > span > svg > path {
     fill: var(--green);
   }
 
-  .karmaCounter > button.down:hover > span > svg > path {
+  .carmaCounter > button.down:hover > span > svg > path {
     fill: var(--orange);
   }
 
-  .up {
+  .carmaCounter__upBtn {
     display: flex;
   }
 
-  .down {
+  .carmaCounter__downBtn {
     display: flex;
   }
 
-  .karmaValue {
+  .carmaCounter__value {
     font-size: 14px;
     line-height: 16px;
     color: var(--black);
   }
 
-  .karmaCounter {
+  .carmaCounter {
     display: grid;
     align-content: center;
     justify-items: center;
     grid-row-gap: 7px;
   }
 
-  .karmaCounter > * + * {
+  .carmaCounter > * + * {
     padding: 0;
   }
 }

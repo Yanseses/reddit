@@ -46,11 +46,11 @@ export function getPosts(token: string){
         }
         dispatch(getPostsSuccess(data))
       } else {
-        throw Promise.reject('Error: ' + req.statusText)
+        return Promise.reject('Error: ' + req.statusText)
       }
     }).catch(err => {
       console.log(err)
-      dispatch(getPostsFailed())
+      dispatch(getPostsFailed(err))
     })
   }
 }
@@ -62,18 +62,18 @@ export function getComments(id: string, token: string){
         headers: { Authorization: 'bearer ' + token }
       }).then((req) => {
       if(req && req.status === 200){
-        if(req.data[1].data.children){
+        if(req.data[1].data){
           const postComments = getPostCommentList(req.data[1].data.children);
           dispatch(getCommentsSucces(postComments))
         } else {
-          throw Promise.reject('User unauthorized')
+          return Promise.reject('You are not authorized')
         }
       } else {
-        throw Promise.reject('Error: ' + req.statusText)
+        return Promise.reject('Error: ' + req.statusText)
       }
     }).catch((err) => {
       console.log(err)
-      dispatch(getCommentsFailed())
+      dispatch(getCommentsFailed(err))
     })
   }
 }
