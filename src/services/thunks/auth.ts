@@ -20,8 +20,8 @@ export function getToken(secretCode: string){
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       auth: { 
-        username: '6X4iUHB6tHjvoPRqS_lmew', 
-        password: 'wC60itVvpG1WZ1U_HGEhrkr-rMqZhw'
+        username: 'zOePDJJVFTX_fUa0eeVhng', 
+        password: 'hqVuli8RVw2oRezgo3oMCkbcAj0reQ'
       }
     }).then((req) => {
       if(req && req.status === 200){
