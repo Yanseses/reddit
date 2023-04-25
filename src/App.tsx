@@ -17,6 +17,7 @@ export function App(){
         <Header />
         <Content>
           <Routes>
+            <Route path="/reddit/index.html" element={<Navigate replace to={'/best'}/>}/>
             <Route path="/auth" element={<Navigate replace to={'/best'}/>}/>
             <Route path="/" element={<Navigate replace to={'/best'}/>} />
             <Route path="/best/*" element={ <Best /> }/>
