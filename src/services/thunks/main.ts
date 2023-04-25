@@ -21,7 +21,7 @@ export function getPosts(token: string){
         Authorization: `bearer ` + token
       },
       params: {
-        after: store.getState().main.posts.after
+        after: store.getState().main.posts.data.after
       }
     }).then(req => {
       if(req && req.status === 200){
@@ -42,7 +42,7 @@ export function getPosts(token: string){
             created: el.data.created,
             likes: el.data.likes
           })),
-          counter: store.getState().main.posts.counter + 1
+          counter: store.getState().main.posts.data.counter + 1
         }
         dispatch(getPostsSuccess(data))
       } else {

@@ -95,7 +95,8 @@ export const mainStore: Reducer = (state: TMainState = mainState, action: TMainA
             after: action.payload.after,
             list: state.posts.data.list.length > 0
               ? state.posts.data.list.concat(action.payload.list)
-              : action.payload.list
+              : action.payload.list,
+            counter: action.payload.counter
           }
         }
       }
