@@ -6,7 +6,7 @@ import {
   getTokenRequest, 
   getTokenSuccess, 
   getUserFailed, 
-  getUserRequest, 
+  getUserRequest,
   getUserSuccess 
 } from "../actions/auth";
 
@@ -14,7 +14,7 @@ export function getToken(secretCode: string){
   return function(dispatch: AppDispatch){
     dispatch(getTokenRequest())
     axios.post('https://www.reddit.com/api/v1/access_token', 
-    `grant_type=authorization_code&code=${secretCode}&redirect_uri=https://yanseses.github.io/reddit/index.html`,
+    `grant_type=authorization_code&code=${secretCode}&redirect_uri=https://yanseses.github.io/reddit/#/`,
     {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
