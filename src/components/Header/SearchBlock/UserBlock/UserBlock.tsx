@@ -37,7 +37,7 @@ export const UserBlock: FC = () => {
       </div>
     ) : (
       <a
-        href={`https://www.reddit.com/api/v1/authorize?client_id=zOePDJJVFTX_fUa0eeVhng&response_type=code&state=random_string&redirect_uri=https://yanseses.github.io/reddit/#/auth&duration=permanent&scope=identity save report edit history read vote`}
+        href={`https://www.reddit.com/api/v1/authorize?client_id=zOePDJJVFTX_fUa0eeVhng&response_type=code&state=random_string&redirect_uri=https://yanseses.github.io/reddit/#/auth&duration=permanent&scope=identity edit flair history read vote wikiread wikiedit`}
         className={styles.userBox}
         >
         <div className={styles.userBox__avatarWrapper}>

@@ -11,6 +11,7 @@ import {
 } from "../actions/auth";
 
 export function getToken(secretCode: string){
+  console.log(secretCode)
   return function(dispatch: AppDispatch){
     dispatch(getTokenRequest())
     axios.post('https://www.reddit.com/api/v1/access_token', 
